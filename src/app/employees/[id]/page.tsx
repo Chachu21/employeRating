@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation"; // Import useParams for client-side route params
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -88,10 +87,15 @@ const RECOMMENDATIONS = [
   },
 ];
 
-export default function EmployeeProfilePage() {
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function EmployeeProfilePage({ params }: PageProps) {
   const [activeTab, setActiveTab] = useState("overview");
-  const params = useParams(); // Get dynamic route parameters
-  const employeeId = params.id as string; // Type assertion for id
+ const employeeId = params.id;
 
   // In a real app, you would fetch the employee data based on the ID
   console.log("Employee ID:", employeeId);
