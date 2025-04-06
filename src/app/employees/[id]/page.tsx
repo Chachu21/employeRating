@@ -88,14 +88,16 @@ const RECOMMENDATIONS = [
 ];
 
 export default function EmployeeProfilePage({
-//   params,
+  params,
 }: {
   params: { id: string };
 }) {
   const [activeTab, setActiveTab] = useState("overview");
 
   // In a real app, you would fetch the employee data based on the ID
-//   const employeeId = params.id;
+  const employeeId = params.id;
+
+  console.log(employeeId);
 
   return (
     <div className="container mx-auto py-10">
