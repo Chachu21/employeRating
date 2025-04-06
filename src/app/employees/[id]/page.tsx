@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -88,13 +88,9 @@ const RECOMMENDATIONS = [
 ];
 
 // You might need to adjust how you get the ID based on your routing setup
-export default function EmployeeProfilePage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function EmployeeProfilePage({ params }) {
   const [activeTab, setActiveTab] = useState("overview");
-  const employeeId = params.id;
+const employeeId = use(params).id;
   // In a real app, you would fetch the employee data based on the ID
   console.log("Employee ID:", employeeId);
 
