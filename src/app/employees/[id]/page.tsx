@@ -93,9 +93,10 @@ type PageProps = {
   };
 };
 
+// You might need to adjust how you get the ID based on your routing setup
 export default function EmployeeProfilePage({ params }: PageProps) {
   const [activeTab, setActiveTab] = useState("overview");
- const employeeId = params.id;
+  const employeeId = params.id;
 
   // In a real app, you would fetch the employee data based on the ID
   console.log("Employee ID:", employeeId);
