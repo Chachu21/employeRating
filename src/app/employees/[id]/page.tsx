@@ -86,11 +86,18 @@ const RECOMMENDATIONS = [
     avatar: "/placeholder.svg",
   },
 ];
+interface EmployeeProfilePageParams {
+  id: string;
+}
 
 // You might need to adjust how you get the ID based on your routing setup
-export default function EmployeeProfilePage({ params }) {
+export default function EmployeeProfilePage({
+  params,
+}: {
+  params: EmployeeProfilePageParams;
+}) {
   const [activeTab, setActiveTab] = useState("overview");
-const employeeId = use(params).id;
+  const employeeId = use(params).id;
   // In a real app, you would fetch the employee data based on the ID
   console.log("Employee ID:", employeeId);
 
